@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --gradient: linear-gradient(90deg, #ee6352, purple, #ee6352);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: width 1s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #232c33;
+}
+
+
+/* @keyframes text-animation {} */
+
+.navigation {
+    position: absolute;
+    height: 500px;
+    // width: 70px;
+    width: 70px;
+    background: #2b343b;
+    box-shadow: 10px 0 0 #4187f6;
+    overflow-x: hidden;
+    border-left: 10px solid #2b343b;
+    ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-left: 5px;
+        padding-top: 40px;
+        li {
+            position: relative;
+            list-style: none;
+            width: 100%;
+            a {
+                position: relative;
+                /* display: block; */
+                display: flex;
+                text-decoration: none;
+                color: #fff;
+                width: 100%;
+                .icon {
+                    position: relative;
+                    display: block;
+                    min-width: 60px;
+                    height: 60px;
+                    min-height: 60px;
+                    line-height: 70px;
+                    text-align: center;
+                    ion-icon {
+                        position: relative;
+                        font-size: 1.8em;
+                        z-index: 1;
+                    }
+                }
+                .title {
+                    position: relative;
+                    display: block;
+                    padding-left: 10px;
+                    height: 60px;
+                    line-height: 60px;
+                    white-space: nowrap;
+                    color: white;
+                    color: transparent;
+                    -webkit-text-fill-color: transparent;
+                    background-image: var(--gradient);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    transition: background-position 1s;
+                    background-size: 300%;
+                    &:hover {
+                        background-position: right;
+                    }
+                }
+            }
+        }
+        li.active {
+            background-color: #4187f8;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            a {
+                &::before {
+                    content: '';
+                    top: -30px;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    border-radius: 50%;
+                    box-shadow: 15px 15px 0 #4187f8;
+                }
+                &::after {
+                    content: '';
+                    bottom: -30px;
+                    right: 0;
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    border-radius: 50%;
+                    box-shadow: 15px -15px 0 #4187f8;
+                }
+            }
+        }
+    }
+    &:hover {
+        width: 300px;
+    }
+}
